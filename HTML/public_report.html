@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Public Tip</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="public_report.html" class="active">Report Crime</a></li>
+                <li><a href="tip_status.html">Check Status</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="tipForm" class="form-section">
+        <h2 style="color:burlywood; text-decoration: underline;">Submit a Non-Emergency Tip 📝</h2>
+        
+        <p class="note" style="text-align: center; color: yellow;">
+            ⚠️ **IN AN EMERGENCY, DO NOT USE THIS FORM. CALL 911.**
+        </p>
+
+        <div class="form-columns" style="grid-template-columns: 1fr;"> 
+            
+            <div class="form-column primary-details">
+                
+                <div class="form-group">
+                    <label for="crimeType"><i class="fa-solid fa-bullhorn"></i> Tip/Incident Type</label>
+                    <select id="crimeType" required>
+                        <option value="">Select Type</option>
+                        <option value="Suspicious Activity">Suspicious Activity</option>
+                        <option value="Theft Tip">Theft Tip</option>
+                        <option value="Vandalism Tip">Vandalism Tip</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location"><i class="fa-solid fa-map-location-dot"></i> Location/Area Details (Street, Building, etc.)</label>
+                    <input type="text" id="location" placeholder="Enter precise area details" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description"><i class="fa-solid fa-file-lines"></i> Detailed Tip Description</label>
+                    <textarea id="description" placeholder="Provide all known details: what, when, who, how" rows="8" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail"><i class="fa-solid fa-envelope"></i> Your Contact Email (Optional)</label>
+                    <input type="email" id="contactEmail" placeholder="Email for follow-up (will remain confidential)">
+                </div>
+                
+                <input type="hidden" id="severity" value="Low">
+                <input type="hidden" id="datetime" value=""> 
+
+            </div>
+            
+        </div>
+
+        <div class="buttons full-width">
+            <button class="scene-btn" type="submit">Submit Confidential Tip</button>
+            <p id="submission-feedback" style="color: #bbb; margin-top: 20px;"></p>
+        </div>
+    </form>
+
+    <script src="../JS/public_report.js"></script>
+    <script>
+        // Set the hidden datetime field to the current time, as the public user won't input it
+        document.getElementById('datetime').value = new Date().toISOString().slice(0, 16);
+    </script>
+</body>
+</html>

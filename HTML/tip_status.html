@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tip Status Checker</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="public_report.html">Report Crime</a></li>
+                <li><a href="tip_status.html" class="active">Check Status</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="statusForm" class="form-section" style="max-width: 600px;">
+        <h2 style="color:burlywood; text-decoration: underline;">Tip Status Checker 🔎</h2>
+        
+        <div class="form-group">
+            <label for="tipId"><i class="fa-solid fa-hashtag"></i> Enter Your Tip ID</label>
+            <input type="number" id="tipId" placeholder="e.g., 101, 150" required>
+        </div>
+
+        <div class="buttons full-width">
+            <button class="scene-btn" type="submit">Check Status</button>
+        </div>
+
+        <div id="resultsArea" style="margin-top: 30px; padding: 20px; border: 1px solid #444; border-radius: 8px; background: #333; min-height: 100px;">
+            <p style="color: #bbb;">Enter a Tip ID and click "Check Status" to see its progress.</p>
+        </div>
+    </form>
+
+    <script src="../JS/tip_status.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Police Notice Board</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Styles needed for the notice cards (copied from previous step) */
+        .notice-container { display: flex; flex-direction: column; gap: 20px; }
+        .notice-card {
+            background: #333;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            border-left: 5px solid #4BC0C0; /* Default color for Announcements */
+        }
+        .notice-card.most-wanted {
+            border-left: 5px solid crimson; /* Red accent for Most Wanted */
+            background: #252525;
+        }
+        .most-wanted .wanted-info { display: flex; gap: 20px; align-items: center; }
+        .most-wanted img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid crimson;
+        }
+        .most-wanted .bounty { font-size: 1.8rem; font-weight: bold; color: gold; margin-top: 10px; }
+        .notice-category {
+            display: inline-block;
+            background: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="police_notice_portal.html" class="active">Notice Board</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section" style="max-width: 900px;">
+        <h2 style="color:burlywood; text-decoration: underline;">Official Police Notice Board</h2>
+        <p class="note" style="text-align: center;">View official announcements, alerts, and most wanted persons.</p>
+        
+        <div id="notice-container" class="notice-container">
+            <p id="loading-message" style="text-align: center;">Loading official notices...</p>
+        </div>
+    </div>
+
+    <script src="../JS/police_notice_portal.js"></script>
+</body>
+</html>

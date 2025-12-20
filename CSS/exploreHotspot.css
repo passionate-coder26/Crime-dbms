@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6f0ff, #f9fbff); 
+    color: #2c3e50;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.header div {
+    margin-left: 15px;
+    padding: 8px 16px;
+    margin-top: 30px;
+    background: rgba(0, 123, 255, 0.12);
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 30px;
+    align-items: center;
+    padding-top: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.header div:hover {
+    background: rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.title {
+    align-items: center;
+    margin-right: 210px;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #2a5d9f;
+    text-shadow: none;
+}
+
+.form-section {
+    margin: 50px auto;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#properWidth {
+    width: 677px;
+}
+
+.form-group select option {
+    background: #fff;
+    color: #333;
+}
+
+.form-group input::placeholder {
+    color: #888;
+}

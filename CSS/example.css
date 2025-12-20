@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background: url("../crimewallpaper.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.header .nav ul li {
+    margin: 0 10px;
+}
+
+.header .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 15px;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover {
+    background: #f33;
+    border-radius: 3px;
+}
+
+.form-section {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 40px;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    text-align: left;
+}
+
+.form-section h2 {
+    text-align: center;
+    color: crimson;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border: 1px solid crimson;
+    box-shadow: 0 0 6px rgba(220,20,60,0.4);
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin: 10px 0 20px;
+}
+
+.scene-btn {
+    background: #f33;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.scene-btn:hover {
+    background: crimson;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background: #333;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.file-item button {
+    background: crimson;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #222;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: #fff;
+}
+
+.modal-header h3 {
+    margin-top: 10px;
+    color: #10b981;
+}
+
+.modal-actions button {
+    margin: 10px 5px 0 5px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #10b981;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #f33;
+    color: #fff;
+}

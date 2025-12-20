@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime INVESTIGATION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="Hotspot.html">Crime analysis</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="predictor.html">Crime Predictor</a></li>
+                <!-- <li><a href="public_report.html">Report Crime</a></li>
+                <li><a href="tip_status.html">Check Status</a></li> -->
+                <li><div id="hamburger-icon" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div></li>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources 👥</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+                
+                <hr id="official-hr">
+                
+                <h3 id="official-heading">Official Portal 👮</h3>
+                
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="main">
+        <video autoplay muted loop id="bg-video">
+            <source src="../Untitled design.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="../photo-halloween-concept-blood-splatter-white-background_742418-12048.png" alt="Image"
+            class="blood-overlay">
+
+        <div class="crime-info">
+            <h1>CRIME <span class="first">DATA &nbsp;ANALYSIS</span></h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;"Visualize crime trends, explore hotspots, and make communities <br> &nbsp;
+                &nbsp;safer with real-time insights and
+                interactive data analysis."</p>
+
+            <div class="sidebar">
+                <a href="#" id="signup-btn" class="scene-btn">Sign up</a>
+                <a href="#" id="login-btn" class="scene-btn">Log in</a>
+            </div>
+
+            <div class="data" id="data">
+                <div class="stats-card hidden">
+                    <h3>Total Crimes</h3>
+                    <p id="total-crimes">640</p>
+                </div>
+                <div class="stats-card hidden">
+                    <h3>Predicted Crimes</h3>
+                    <p id="predicted-crimes">25</p>
+                </div>
+                <div class="stats-card hidden">
+                    <h3>High Risk Areas</h3>
+                    <p id="high-risk">5</p>
+                </div>
+
+
+                <i class="fa-solid fa-handcuffs"></i>
+            </div>
+
+            <div class="about-section" id="about">
+                <h2>ABOUT US</h2>
+                <p>This website is designed to provide insights into crime trends and patterns using real data. Our goal
+                    is to raise awareness, help in research, and make crime statistics easier to understand through
+                    interactive visualizations and reports.</p>
+
+                <div class="about-features">
+                    <div class="feature-card hidden">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>Safety Awareness</h3>
+                        <p>Identify crime-prone areas and help communities stay safe with data-driven insights.</p>
+                    </div>
+
+                    <div class="feature-card hidden">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <h3>Data Visualization</h3>
+                        <p>Explore crime statistics with interactive graphs, charts, and visual reports.</p>
+                    </div>
+
+                    <div class="feature-card hidden">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <h3>Trend Analysis</h3>
+                        <p>Discover trends across years, regions, and categories to understand crime better.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <p>Have questions, suggestions, or want to collaborate? Reach out to us!</p>
+
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i> crimeanalysis@example.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91-9876543210</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Pune, India</p>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <p class="footer-note">© 2025 Crime Data Analysis. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div id="auth-popup" class="popup hidden_info">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+
+                <form id="login-form" class="form active">
+                    <h1>Login</h1>
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" class="info" placeholder="username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" class="info" placeholder="Password" required>
+                    </div>
+
+                    <a href="#" class="forgot">Forgot password?</a>
+                    <button type="submit" class="login-btn">Login</button>
+
+                    <div class="divider">Or Sign Up Using</div>
+                    <div class="first-social-icons">
+                        <a href="#"><i class="fab fa-facebook-f" style="color:#3b5998;"></i></a>
+                        <a href="#"><i class="fab fa-twitter" style="color:#1da1f2;"></i></a>
+                        <a href="#"><i class="fab fa-google" style="color:#db4437;"></i></a>
+                    </div>
+
+                    <div class="signup-link">
+                        Don’t have an account? <a href="#" id="show-signup">SIGN UP</a>
+                    </div>
+                </form>
+
+                <form id="signup-form" class="form">
+                    <h1>Sign Up</h1>
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Sign Up</button>
+
+                    <div class="divider">Already have an account?</div>
+                    <div class="signup-link">
+                        <a href="#" id="show-login">LOGIN</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/Homepage.js"></script>
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Official Tip Management</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Minimal custom styling for the table and status */
+        .tip-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .tip-table th, .tip-table td { padding: 12px; border: 1px solid #444; text-align: left; }
+        .tip-table th { background-color: #333; color: crimson; }
+        .tip-table td { background-color: #252525; color: #fff; vertical-align: top; }
+        .status-select { padding: 8px; border-radius: 4px; background: #444; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="tip_management.html" class="active">Tip Management</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section" style="max-width: 1200px;">
+        <h2 style="color:burlywood; text-decoration: underline;">Public Tip Review & Management</h2>
+        <p id="message-area" style="text-align: center; margin-bottom: 20px; color: yellow;"></p>
+        
+        <table class="tip-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Submitted</th>
+                    <th>Type / Location</th>
+                    <th>Description</th>
+                    <th>Current Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tips-list">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="../JS/tip_management.js"></script>
+</body>
+</html>

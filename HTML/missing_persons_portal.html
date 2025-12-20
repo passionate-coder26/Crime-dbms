@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing Persons Portal</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Styles copied from the public view page for the directory */
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .report-card {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        .report-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .status-tag {
+            display: inline-block;
+            background: crimson;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="missing_persons_portal.html" class="active">Missing Persons Portal</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="missingReportForm" class="form-section" enctype="multipart/form-data">
+        <h2 style="color:burlywood; text-decoration: underline;">Report a Missing Person (For Official Review)</h2>
+        <p class="note" style="text-align: center;">Your report will be reviewed and approved by police before being made public.</p>
+
+        <div class="form-columns">
+            <div class="form-column primary-details">
+                <div class="form-group">
+                    <label for="personName"><i class="fa-solid fa-user"></i> Person's Full Name</label>
+                    <input type="text" id="personName" name="personName" required>
+                </div>
+                <div class="form-group form-grid-2">
+                    <div><label for="age">Age</label><input type="number" id="age" name="age"></div>
+                    <div><label for="gender">Gender</label><select id="gender" name="gender"><option value="">Select</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select></div>
+                </div>
+                <div class="form-group"><label for="height">Height (e.g., 5'10")</label><input type="text" id="height" name="height"></div>
+            </div>
+
+            <div class="form-column secondary-details">
+                <div class="form-group">
+                    <label for="lastSeenDate"><i class="fa-solid fa-calendar-alt"></i> Last Seen Date</label>
+                    <input type="date" id="lastSeenDate" name="lastSeenDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastSeenLocation"><i class="fa-solid fa-map-marker-alt"></i> Last Seen Location</label>
+                    <input type="text" id="lastSeenLocation" name="lastSeenLocation" placeholder="Street, City, Landmark" required>
+                </div>
+                <div class="form-group">
+                    <label for="reporterEmail"><i class="fa-solid fa-envelope"></i> Your Contact Email</label>
+                    <input type="email" id="reporterEmail" name="reporterEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="photo"><i class="fa-solid fa-camera"></i> Upload Photo (JPG/PNG)</label>
+                    <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png">
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group full-width">
+            <label for="description"><i class="fa-solid fa-info-circle"></i> Distinguishing Marks/Clothing</label>
+            <textarea id="description" name="description" rows="4" placeholder="Wearing, tattoos, scars, mood, etc."></textarea>
+        </div>
+
+        <div class="buttons full-width">
+            <button class="scene-btn" type="submit">Submit Report for Review</button>
+            <p id="submission-feedback" style="color: #bbb; margin-top: 20px;"></p>
+        </div>
+    </form>
+
+    <hr style="margin: 50px 0;">
+
+    <div class="form-section" style="max-width: 1400px; padding: 50px 0;">
+        <h2 style="color:burlywood; text-decoration: underline; text-align: center;">Active Missing Persons Directory</h2>
+        <p class="note" style="text-align: center;">These reports have been verified and approved by law enforcement.</p>
+        
+        <div id="missing-persons-container" class="report-grid" style="margin: 0 50px;">
+            <p style="grid-column: 1 / -1; color: #ccc;" id="loading-message">Loading active reports...</p>
+        </div>
+    </div>
+
+    <script src="../JS/missing_persons_portal.js"></script> 
+</body>
+</html>

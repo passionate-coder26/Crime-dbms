@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Public Tip</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Hotspot.html">Crime analysis</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="predictor.html" class="active">Crime Predictor</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="tipForm" class="form-section">
+        <h2 style="color:burlywood; text-decoration: underline;">Crime Predictor</h2>
+
+        <div class="form-columns" style="grid-template-columns: 1fr;">
+
+            <div class="form-column primary-details">
+
+                <div class="form-group">
+                    <label for="crimeType"><i class="fa-solid fa-bullhorn"></i> Tip/Incident Type</label>
+                    <select id="crimeType" required>
+                        <option value="">Select Type</option>
+                        <option value="Murder">Murder</option>
+                        <option value="Attempt to Murder">Attempt to Murder</option>
+                        <option value="Rape">Rape</option>
+                        <option value="Custodial Rape">Custodial Rape</option>
+                        <option value="Kidnapping & Abduction">Kidnapping & Abduction</option>
+                        <option value="Kidnapping & Abduction of Women/Girls">Kidnapping & Abduction of Women/Girls
+                        </option>
+                        <option value="Robbery">Robbery</option>
+                        <option value="Burglary">Burglary</option>
+                        <option value="Theft">Theft</option>
+                        <option value="Riots">Riots</option>
+                        <option value="Cheating">Cheating</option>
+                        <option value="Counterfeiting">Counterfeiting</option>
+                        <option value="Dowry Deaths">Dowry Deaths</option>
+                        <option value="Assault on Women (Modesty)">Assault on Women (Modesty)</option>
+                        <option value="Cruelty by Husband/Relatives">Cruelty by Husband/Relatives</option>
+                        <option value="Importation of Girls">Importation of Girls from Foreign Countries</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="stateSelect"><i class="fa-solid fa-map-location-dot"></i> State</label>
+                    <select id="stateSelect" onchange="loadDistricts()" required>
+                        <option value="">Select State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="districtSelect"><i class="fa-solid fa-map-pin"></i> District</label>
+                    <select id="districtSelect" required disabled>
+                        <option value="">Select State First</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail"><i class="fa-solid fa-envelope"></i> Your Contact Email (Optional)</label>
+                    <input type="email" id="contactEmail" placeholder="Email for follow-up (will remain confidential)">
+                </div>
+
+                <input type="hidden" id="severity" value="Low">
+                <input type="hidden" id="datetime" value="">
+
+            </div>
+
+        </div>
+
+        <div class="buttons full-width">
+            <button class="scene-btn" type="submit">Predict Crime</button>
+            <div id="submission-feedback" style="color: #bbb; margin-top: 20px;"></div>
+        </div>
+    </form>
+
+    <script src="../JS/predictor.js"></script>
+    <script>
+        // Set the hidden datetime field to the current time, as the public user won't input it
+        document.getElementById('datetime').value = new Date().toISOString().slice(0, 16);
+    </script>
+</body>
+
+</html>

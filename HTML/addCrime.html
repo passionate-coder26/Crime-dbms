@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Crime</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="addCrime.html" class="active">Add Crime</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="crimeForm" class="form-section">
+    <h2 style="color:burlywood; text-decoration: underline;">Add New Crime Record</h2>
+
+    <div class="form-columns">
+        
+        <div class="form-column primary-details">
+            
+            <div class="form-group form-grid-2">
+                <div>
+                    <label for="crimeType"><i class="fa-solid fa-gun"></i> Crime Type</label>
+                    <select id="crimeType" required>
+                        <option value="">Select</option>
+                        <option value="theft">Theft</option>
+                        <option value="assault">Assault</option>
+                        <option value="fraud">Fraud</option>
+                        <option value="robbery">Robbery</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="severity"><i class="fa-solid fa-triangle-exclamation"></i> Severity</label>
+                    <select id="severity" required>
+                        <option value="">Select</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="datetime"><i class="fa-solid fa-clock"></i> Date & Time of Incident</label>
+                <input type="datetime-local" id="datetime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description"><i class="fa-solid fa-file-lines"></i> Description</label>
+                <textarea id="description" placeholder="Enter detailed description" rows="4"></textarea>
+            </div>
+            
+        </div>
+        
+        <div class="form-column secondary-details">
+            
+            <div class="officer-section">
+                <div class="section-title"><i class="fa-solid fa-user-shield"></i> Reporting Officer Details</div>
+                <div class="form-group form-grid-2">
+                    <div>
+                        <label for="officerName">Officer Name</label>
+                        <input type="text" id="officerName" placeholder="Name" required>
+                    </div>
+                    <div>
+                        <label for="badgeNumber">Badge Number</label>
+                        <input type="text" id="badgeNumber" placeholder="4-6 digit badge number" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="location"><i class="fa-solid fa-location-dot"></i> Location/District</label>
+                <input type="text" id="location" placeholder="Enter location/street name" required>
+            </div>
+
+            <p class="note">Optional: Enter GPS coordinates</p>
+            <div class="form-group form-grid-2">
+                <div>
+                    <label for="latitude">Latitude</label>
+                    <input type="number" id="latitude" step="any" placeholder="Latitude">
+                </div>
+                <div>
+                    <label for="longitude">Longitude</label>
+                    <input type="number" id="longitude" step="any" placeholder="Longitude">
+                </div>
+            </div>
+        </div>
+        
+    </div> <div class="form-group file-upload full-width">
+        <label for="evidence" class="file-label">
+            <i class="fa-solid fa-upload"></i>
+            <span>Upload Evidence (Max 10MB)</span>
+            <small>Drag & drop or click to select files</small>
+        </label>
+        <input type="file" id="evidence" multiple class="file-input">
+        <div id="fileList" class="file-list"></div>
+    </div>
+
+    <div class="buttons full-width">
+        <button class="scene-btn" type="submit">Save Crime Record</button>
+    </div>
+</form>
+
+    <script src="../JS/example.js"></script>
+</body>
+</html>

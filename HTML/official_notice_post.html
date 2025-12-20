@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Official Notice</title>
+    <link rel="stylesheet" href="../CSS/addCrime.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Styles to show/hide the bounty/photo fields based on category */
+        .wanted-fields { display: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                 <li><a href="official_notice_post.html" class="active">Post Notice</a></li>
+                <li><a href="police_notice_portal.html">Notice Board</a></li>
+                <div id="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <div id="menu-panel" class="menu-panel">
+                <h3>Public Access & Resources</h3>
+                <a href="safety_portal.html" class="menu-link">Safety Portal & Contacts</a>
+                <a href="missing_persons_portal.html" class="menu-link">Missing Persons Portal</a>
+                <a href="police_notice_portal.html" class="menu-link">Police Notice Board</a>
+                <a href="public_report.html" class="menu-link">Public Tip/Crime Report</a>
+                <a href="tip_status.html" class="menu-link">Tip Status Checker</a>
+
+                <hr id="official-hr">
+                <h3 id="official-heading">Official Portal</h3>
+
+                <a href="official_notice_post.html" class="menu-link official-link">Official Notice Post</a>
+                <a href="addCrime.html" class="menu-link official-link">Add New Crime</a>
+                <a href="advanced_search.html" class="menu-link official-link">Search Crimes</a>
+                <a href="missing_review_dashboard.html" class="menu-link official-link">Missing Review Dashboard</a>
+                <a href="tip_management.html" class="menu-link official-link">Tip Management</a>
+
+                <!-- 🔹 Log Out option -->
+                <a href="#" class="menu-link official-link" id="link-logout">➡ Log Out / Switch User</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="noticePostForm" class="form-section" enctype="multipart/form-data" style="max-width: 800px;">
+        <h2 style="color:burlywood; text-decoration: underline;">Post New Police Notice</h2>
+        <p class="note" style="text-align: center;">This form is secured for official use only.</p>
+
+        <div class="form-group">
+            <label for="category"><i class="fa-solid fa-bullhorn"></i> Notice Category</label>
+            <select id="category" name="category" required onchange="toggleWantedFields(this.value)">
+                <option value="">Select Category</option>
+                <option value="Announcement">Announcement (General Info)</option>
+                <option value="Alert">Alert (Warning/Safety)</option>
+                <option value="Most Wanted">Most Wanted</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title"><i class="fa-solid fa-heading"></i> Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="datePosted"><i class="fa-solid fa-calendar-day"></i> Date Posted</label>
+            <input type="date" id="datePosted" name="datePosted" required>
+        </div>
+
+        <div class="form-group">
+            <label for="locationSpecific"><i class="fa-solid fa-map-pin"></i> Location Specific (Optional)</label>
+            <input type="text" id="locationSpecific" name="locationSpecific" placeholder="e.g., Downtown District, City-wide">
+        </div>
+
+        <div class="wanted-fields" id="wantedFields">
+            <p style="font-weight: bold; color: gold;"><i class="fa-solid fa-crown"></i> MOST WANTED DETAILS</p>
+            
+            <div class="form-group">
+                <label for="bounty">Bounty Amount (USD)</label>
+                <input type="number" id="bounty" name="bounty" placeholder="e.g., 5000.00">
+            </div>
+
+            <div class="form-group">
+                <label for="wantedPhoto"><i class="fa-solid fa-camera"></i> Upload Wanted Photo</label>
+                <input type="file" id="wantedPhoto" name="wantedPhoto" accept="image/*">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="content"><i class="fa-solid fa-file-lines"></i> Content/Details</label>
+            <textarea id="content" name="content" rows="6" required></textarea>
+        </div>
+
+        <div class="buttons full-width">
+            <button class="scene-btn" type="submit">Publish Notice</button>
+            <p id="submission-feedback" style="color: #bbb; margin-top: 20px;"></p>
+        </div>
+    </form>
+
+    <script src="../JS/official_notice_post.js"></script>
+    <script>
+        // Simple client-side JS to show/hide relevant fields
+        function toggleWantedFields(category) {
+            const fields = document.getElementById('wantedFields');
+            const photoInput = document.getElementById('wantedPhoto');
+            if (category === 'Most Wanted') {
+                fields.style.display = 'block';
+                // Optional: Make photo required for wanted posters
+                photoInput.setAttribute('required', 'required');
+            } else {
+                fields.style.display = 'none';
+                photoInput.removeAttribute('required');
+            }
+        }
+    </script>
+</body>
+</html>
